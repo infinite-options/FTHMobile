@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="InfiniteMeals.CheckOutPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             Title="Serving Now"
+             ios:Page.UseSafeArea="true">
+
+<StackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+        <Entry
+            x:Name="Address"
+            Placeholder="Enter Address"></Entry>
+        <Entry
+            x:Name="City"
+            Placeholder="City"></Entry>
+        <Entry
+            x:Name="State"
+            Placeholder="State"></Entry>
+        <Entry
+            x:Name="Zipcode"
+            Placeholder="Zipcode"></Entry>
+        <Button
+            Text="Check Address" ></Button>
+    
+    </StackLayout>
+
+</ContentPage>
