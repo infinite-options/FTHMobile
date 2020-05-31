@@ -19,8 +19,14 @@ namespace InfiniteMeals
 
         async void loginClick(object sender, System.EventArgs e)
         {
-            var firstPage = new MainPage();
-            await Navigation.PushAsync(firstPage);
+            var loggedIn = new MainPage();
+            await Navigation.PushAsync(loggedIn);
+        }
+
+        async void signUpClick(object sender, System.EventArgs e)
+        {
+            var signUpPage = new SignUp();
+            await Navigation.PushAsync(signUpPage);
         }
     }
 }

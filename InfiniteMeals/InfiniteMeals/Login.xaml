@@ -17,7 +17,9 @@
 
             <Entry Text="password" FontSize="15" Margin="30, -20, 0, 0" HorizontalOptions="Center" HorizontalTextAlignment="Center" WidthRequest="300" TextColor="White" TextChanged="clearText"/>
 
-            <Button Clicked="loginClick" Text="sign up" Margin="0, 130, 0, 0"></Button>
+            <Button Clicked="loginClick" Text="log in" Margin="0, 90, 0, 0"></Button>
+
+            <Button Clicked="signUpClick" Text="sign up" Margin="0, 20, 0, 0"></Button>
 
 
         </StackLayout>
