@@ -71,6 +71,8 @@
     <None Include="Resources\walking.png" />
     <None Include="Resources\googlemaps.png" />
     <None Include="Resources\searchIcon.png" />
+    <None Include="Resources\plusButton.png" />
+    <None Include="Resources\minusButton.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -126,6 +128,14 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\facebookIcon.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\plusButton.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\minusButton.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

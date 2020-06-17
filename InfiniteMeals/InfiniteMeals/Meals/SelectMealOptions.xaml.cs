@@ -124,7 +124,7 @@ namespace InfiniteMeals
 
         private void reduceOrders(object sender, System.EventArgs e)
         {
-            var button = (Button)sender;
+            var button = (ImageButton)sender;
             var mealObject = (MealsModel)button.CommandParameter;
 
             if (mealObject != null)
@@ -140,7 +140,7 @@ namespace InfiniteMeals
         private void addOrders(object sender, System.EventArgs e)
         {
         
-            var button = (Button)sender;
+            var button = (ImageButton)sender;
             var mealObject = (MealsModel)button.CommandParameter;
 
             if (mealObject != null)

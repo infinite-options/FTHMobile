@@ -29,9 +29,9 @@
                             </StackLayout>
 
                             <StackLayout Orientation="Horizontal">
-                                <Button Text="-" FontSize="40" HeightRequest="10" BorderColor="Gray" BorderWidth="0" Clicked="reduceOrders" CommandParameter="{Binding .}"/>
+                                <ImageButton Source="minusButton.png" HeightRequest="25" Clicked="reduceOrders" WidthRequest="25" BackgroundColor="Transparent" CommandParameter="{Binding .}"/>
                                 <Label HorizontalTextAlignment="Center" Text="{Binding order_qty}" WidthRequest="30" VerticalTextAlignment="Center"/>
-                                <Button Text="+" FontSize="30" HeightRequest="10" BorderColor="Gray" BorderWidth="0" Clicked="addOrders" CommandParameter="{Binding .}"/>
+                                <ImageButton Source="plusButton.png" HeightRequest="25" Clicked="addOrders" WidthRequest="25" BackgroundColor="Transparent" CommandParameter="{Binding .}"/>
                             </StackLayout>
                             
                         </StackLayout>
