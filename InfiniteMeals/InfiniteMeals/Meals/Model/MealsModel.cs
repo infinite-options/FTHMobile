@@ -12,7 +12,7 @@ namespace InfiniteMeals.Meals.Model
         public string description { get; set; }
         public string price { get; set; }
         public string id { get; set; }
-        public string kitchen_id { get; set; }
+        public string foodbank_id { get; set; }
         public string kitchen_name { get; set; }
         public int order_qty { get; set; }
         public int[] orderList { get; set; }

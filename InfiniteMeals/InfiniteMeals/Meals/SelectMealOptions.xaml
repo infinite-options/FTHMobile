@@ -26,7 +26,6 @@
                                     <Label Text="$" FontSize="Small" Margin="0,0,0,0"></Label>
                                     <Label Text="{Binding price}" FontSize="Small" Margin="0,0,0,0"></Label>
                                 </StackLayout>
-                                <Label Text="{Binding description}" WidthRequest="200" FontAttributes="Italic" FontSize="Small"></Label>
                             </StackLayout>
 
                             <StackLayout Orientation="Horizontal">

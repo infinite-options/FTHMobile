@@ -26,7 +26,7 @@ namespace InfiniteMeals
             NoMealsLabel.IsVisible = false;
 
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://dc3so1gav1.execute-api.us-west-1.amazonaws.com/dev/api/v2/excess");
+            request.RequestUri = new Uri("https://dc3so1gav1.execute-api.us-west-1.amazonaws.com/dev/api/v2/foodbankinfo");
             //https://phaqvwjbw6.execute-api.us-west-1.amazonaws.com/dev/api/v1/meals/" + kitchen_id
             request.Method = HttpMethod.Get;
             var client = new HttpClient();
@@ -55,14 +55,13 @@ namespace InfiniteMeals
                 {
                     if (foodbank_id == k["foodbank_id"].ToString())
                     {
-                        string foodbankID = k["item"].ToString();
+                        string foodbankID = k["food_name"].ToString();
                         this.Meals.Add(new MealsModel()
                         {
                             title = foodbankID,
-                            imageString = "truck.png",
-                            price = "Price",
-                            description = "Description",
-                            kitchen_id = "kitchen_id",
+                            imageString = k["fl_image"].ToString(),
+                            price = k["fl_value_in_dollars"].ToString(),
+                            foodbank_id = "foodbank_id",
                             id = "id",
                             kitchen_name = "kitchen_name",
                             qty = 0

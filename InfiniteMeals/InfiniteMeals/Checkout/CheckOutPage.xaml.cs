@@ -70,8 +70,9 @@ namespace InfiniteMeals
 
 
         public Image cartImage = new Image() { VerticalOptions = LayoutOptions.Center, Source = "truck.png", HeightRequest = 60, MinimumWidthRequest = 170, Margin = new Thickness(180, 120, 0, 0)};
-        public Label confirmLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 20, HeightRequest = 45, MinimumWidthRequest = 170, Text = "Confirm Pickup", Margin = 0 };
+        public Label confirmLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 20, HeightRequest = 45, MinimumWidthRequest = 170, Text = "Confirm Order", Margin = 0 };
         public Label addressLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 15, HeightRequest = 25, MinimumWidthRequest = 170, Text = "123 Santa Clara, CA 95120", Margin = 5 };
+
 
 
 
@@ -83,7 +84,7 @@ namespace InfiniteMeals
             kitchenZipcode = kitchen_zipcode;
 
             mealsOrdered = meals;
-            //SetupUI();
+            SetupUI();
 
             //Auto_Fill("user_id", fullNameField);
             //Auto_Fill("email", emailField);
@@ -102,7 +103,8 @@ namespace InfiniteMeals
                     { "meal_id", meal.id },
                     { "qty", meal.order_qty.ToString() },
                     { "name", meal.title },
-                    { "price", meal.price }
+                    { "price", meal.price },
+                    { "image", meal.imageString }
                 });
             }
 
@@ -131,11 +133,23 @@ namespace InfiniteMeals
 
             var addressFieldStackLayout = new StackLayout() { Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 45, HorizontalOptions = LayoutOptions.FillAndExpand };
 
-            var orderTitleLabel = new Label() { Margin = 10, Text = "Your Order:" };
+            //var orderTitleLabel = new Label() { Margin = 10, Text = "Your Order:" };
 
 
             var orderNamesStackLayout = new StackLayout() { Orientation = StackOrientation.Vertical, HorizontalOptions = LayoutOptions.StartAndExpand, Margin = 10 };
             var orderPriceAndQtyLayout = new StackLayout() { Orientation = StackOrientation.Vertical, HorizontalOptions = LayoutOptions.EndAndExpand};
+            var imageLayout = new StackLayout() { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.EndAndExpand };
+
+            foreach (var meal1 in mealsOrdered)
+            {
+                if (meal1.order_qty >= 1)
+                {
+                    var mealImage = new Image() { Source = meal1.imageString, HeightRequest = 60, MinimumWidthRequest = 60 };
+                    var mealQuantity = new Label() { Text = meal1.order_qty.ToString(), FontSize = 20 };
+                    imageLayout.Children.Add(mealImage);
+                    imageLayout.Children.Add(mealQuantity);
+                }
+            }
 
             foreach (var meal in mealsOrdered)
             {
@@ -145,12 +159,10 @@ namespace InfiniteMeals
                 // create label for the UI
                 if (meal.order_qty >= 1)
                 {
-                    var mealNameLabel = new Label() { Text = meal.title, FontSize = 12 };
-                    var mealPriceAndQty = new Label() { Text = meal.order_qty.ToString(), FontSize = 12 }; //+ "  x  " + "$ " + meal.price, FontSize = 12 };
-                    orderNamesStackLayout.Children.Add(mealNameLabel);
-                    orderPriceAndQtyLayout.Children.Add(mealPriceAndQty);
-
-                    grid1Half.Children.Add(cartImage);
+                    //var mealNameLabel = new Label() { Text = meal.title, FontSize = 12 };
+                    //var mealPriceAndQty = new Label() { Text = meal.order_qty.ToString(), FontSize = 12 }; //+ "  x  " + "$ " + meal.price, FontSize = 12 };
+                    //orderNamesStackLayout.Children.Add(mealNameLabel);
+                    //orderPriceAndQtyLayout.Children.Add(mealPriceAndQty);
                 }
             }
 
@@ -194,6 +206,9 @@ namespace InfiniteMeals
 
             grid1.Children.Add(cartReviewLabel);
             grid1.Children.Add(nameLabel);
+            grid1.Children.Add(grid1Half);
+
+            grid1Half.Children.Add(imageLayout);
 
             //grid2Half.Children.Add(cartImage);
             grid2.Children.Add(confirmLabel);
@@ -201,14 +216,14 @@ namespace InfiniteMeals
             //grid2Half.Children.Add(grid2);
 
 
-            grid4.Children.Add(orderTitleLabel);
+            //grid4.Children.Add(orderTitleLabel);
 
             grid5.Children.Add(orderNamesStackLayout);
             grid5.Children.Add(orderPriceAndQtyLayout);
 
 
             grid.Children.Add(grid1);
-            grid.Children.Add(grid1Half);
+            //grid.Children.Add(grid1Half);
             grid.Children.Add(grid2Half);
             grid.Children.Add(grid2);
             grid.Children.Add(grid3);

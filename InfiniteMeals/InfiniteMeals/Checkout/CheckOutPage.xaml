@@ -6,24 +6,4 @@
              Title="Serving Now"
              ios:Page.UseSafeArea="true">
 
-<StackLayout
-        VerticalOptions="Center"
-        HorizontalOptions="Center">
-        <Entry
-            x:Name="Address"
-            Placeholder="Enter Address"></Entry>
-        <Entry
-            x:Name="City"
-            Placeholder="City"></Entry>
-        <Entry
-            x:Name="State"
-            Placeholder="State"></Entry>
-        <Entry
-            x:Name="Zipcode"
-            Placeholder="Zipcode"></Entry>
-        <Button
-            Text="Check Address" ></Button>
-    
-    </StackLayout>
-
 </ContentPage>

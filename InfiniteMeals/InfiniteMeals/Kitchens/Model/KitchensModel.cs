@@ -8,6 +8,7 @@ namespace InfiniteMeals.Kitchens.Model
         public string foodbank_zip { get; set; }
         public string foodbank_id { get; set; }
         public string open_hours { get; set; }
+        public string foodbank_address { get; set; }
 
 
 

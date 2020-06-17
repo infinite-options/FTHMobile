@@ -69,10 +69,11 @@ namespace InfiniteMeals
                     this.Kitchens.Add(new KitchensModel()
                     {
                         foodbank_id = k["foodbank_id"].ToString(),
-                        foodbank_name = k["foodbank_name"].ToString(),
-                        tag_line = k["tag_line"].ToString(),
-                        foodbank_zip = k["foodbank_zip"].ToString(),
-                        open_hours = k[day].ToString()
+                        foodbank_name = k["fb_name"].ToString(),
+                        tag_line = k["fb_tag_line"].ToString(),
+                        foodbank_zip = k["fb_zipcode"].ToString(),
+                        foodbank_address = k["fb_address1"].ToString(),
+                        //open_hours = k[day].ToString()
 
 
                         //        foodbank_id": "800 - 000001",
@@ -237,8 +238,7 @@ namespace InfiniteMeals
                 {
                     if (foodbankID == k["foodbank_id"].ToString())
                     {
-                        string foodbank_id = k["item"].ToString();
-                        Console.WriteLine(foodbank_id);
+                        string foodbank_id = k["fl_name"].ToString();
                     }
                 }
                     

@@ -13,7 +13,7 @@
                 <ViewCell>
                     <StackLayout Margin="15, 15, 15, 15" Orientation="Vertical">
                         <Label Text="{Binding foodbank_name}" HorizontalOptions="StartAndExpand" FontSize="Large" FontAttributes="Bold" Opacity="{Binding opacity}" TextColor="Black"/>
-                        <Label Text="{Binding foodbank_zip}" HorizontalOptions="Start" FontSize="Small" FontAttributes="Italic" Opacity="{Binding opacity}"/>
+                        <Label Text="{Binding foodbank_address}" HorizontalOptions="Start" FontSize="Small" FontAttributes="Italic" Opacity="{Binding opacity}"/>
                         <Label Text="{Binding tag_line}" HorizontalOptions="StartAndExpand" FontSize="Medium" FontAttributes="Italic" Opacity="{Binding opacity}"/>
                         
                         <StackLayout Orientation="Horizontal">
@@ -25,7 +25,7 @@
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Next Delivery: " FontAttributes="Bold" FontSize="Micro" Opacity="{Binding opacity}"/>
+                            <Label Text="Devliery Period: " FontAttributes="Bold" FontSize="Micro" Opacity="{Binding opacity}"/>
                             <!--<Label Text="{Binding delivery_period}" FontSize="Micro" Opacity="{Binding opacity}"/>-->
                         </StackLayout>
                     </StackLayout>

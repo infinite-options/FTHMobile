@@ -5,7 +5,7 @@
         VerticalOptions="Center"
         HorizontalOptions="Center">
 
-        <Label Text="Join Today" Margin="90,50,0,0"></Label>
+        <Label Text="Join Today" Margin="90,20,0,0"></Label>
 
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 20, 0, 0">
