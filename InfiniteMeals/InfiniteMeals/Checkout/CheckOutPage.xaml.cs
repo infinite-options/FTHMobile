@@ -14,21 +14,18 @@ namespace InfiniteMeals
 {
     public partial class OrderInfo
     {
-        public string order_id = "";
-        public string email = ""; 
-        public string name = "";
-        public string phone = "";
+        public string customer_id = "";
+        public string phone = ""; 
         public string street = "";
         public string city = "";
         public string state = "";
-        public string zipCode = "";
-        public string totalAmount = "";
-        public bool paid = false;
-        public string paymentType = "cash";
-        //public string deliveryTime = "5:00 PM";
-        //public string mealOption1 = "1";
-        //public string mealOption2 = "1";
         public string kitchen_id = "";
+        public string zipcode = "";
+        public string totalAmount = "";
+        public string delivery_note = "";
+        public string latitude = "";
+        public string longitude = "";
+        public string delivery_date = "";
         public List<Dictionary<string, string>> ordered_items = new List<Dictionary<string, string>>() ;
     }
 
@@ -57,7 +54,7 @@ namespace InfiniteMeals
 
 
 
-        public CheckOutPage(ObservableCollection<MealsModel> meals, string kitchen_id, string kitchen_zipcode)
+        public CheckOutPage(ObservableCollection<MealsModel> meals, string foodbank_id, string kitchen_zipcode)
         {
             InitializeComponent();
 
@@ -66,29 +63,35 @@ namespace InfiniteMeals
             mealsOrdered = meals;
             SetupUI();
 
-            currentOrder.kitchen_id = kitchen_id;
-            currentOrder.order_id = "1100000";
-            currentOrder.email = "test@gmail.com";
-            currentOrder.name = "Jane Doe";
+
+
+            currentOrder.kitchen_id = foodbank_id;
+            currentOrder.customer_id = "12345";
             currentOrder.phone = "408 466 7899";
             currentOrder.street = "Mission St";
             currentOrder.city = "Santa Cruz";
             currentOrder.state = "CA";
-            currentOrder.zipCode = "95060";
+            currentOrder.zipcode = "95060";
+            currentOrder.delivery_note = "Test delivery note";
+            currentOrder.latitude = "0.000";
+            currentOrder.longitude = "0.000";
+            currentOrder.delivery_date = "today";
+
+            int total = 0;
 
             foreach (var meal in mealsOrdered)
             {
                 if (meal.order_qty > 0)
                 {
+                    total += meal.order_qty;
                     currentOrder.ordered_items.Add(new Dictionary<string, string>()
                     {
                         { "meal_id", meal.id },
-                        { "qty", meal.order_qty.ToString() },
-                        { "name", meal.title },
-                        { "price", meal.price },
+                        { "qty", meal.order_qty.ToString() }
                     });
                 }
             }
+            currentOrder.totalAmount = total.ToString();
 
         }
 
@@ -206,10 +209,9 @@ namespace InfiniteMeals
             await Application.Current.SavePropertiesAsync();
 
             await sendOrderRequest(currentOrder);
-            await DisplayAlert("Thank you!", "Your order has been placed." + System.Environment.NewLine + " An email receipt has been sent to " + currentOrder.email + ". Please complete the payment process by clicking the button below.", "Continue to PayPal");
-            Device.OpenUri(new System.Uri("https://servingnow.me/payment/" + currentOrder.order_id + "/" + currentOrder.totalAmount));
+            Device.OpenUri(new System.Uri("https://servingnow.me/payment/" + currentOrder.customer_id));
 
-            await Navigation.PopModalAsync();
+            //await Navigation.PopModalAsync();
             // "(Copyright Symbol) 2019 Infinite Options   v1.2"
         }
             
@@ -231,34 +233,35 @@ namespace InfiniteMeals
             Console.WriteLine(currentOrderJSONString);
 
 
-
             //JObject currentOrderJSON = JObject.Parse(currentOrderJSONString);
             //System.Console.WriteLine(currentOrderJSON.GetType());
             var content = new StringContent(currentOrderJSONString, Encoding.UTF8, "application/json");
 
-            //System.Console.WriteLine(JsonConvert.SerializeObject(content));
-            var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://phaqvwjbw6.execute-api.us-west-1.amazonaws.com/dev/api/v1/orders");
-            request.Method = HttpMethod.Post;
-            request.Content = content;
-            var client = new HttpClient();
+            using (var httpClient = new HttpClient())
+            {
+                //System.Console.WriteLine(JsonConvert.SerializeObject(content));
+                var request = new HttpRequestMessage();
+                request.Method = HttpMethod.Post;
+                request.Content = content;
+                //var responseString = await request.Content.ReadAsStringAsync();
+                var httpResponse = await httpClient.PostAsync("https://dc3so1gav1.execute-api.us-west-1.amazonaws.com/dev/api/v2/add_order", content);
+                Console.WriteLine("This is the response " + httpResponse);
+            }
 
-            var url = "https://onlinetools.ups.com/addressvalidation/v1/1?regionalrequestindicator=false&maximumcandidatelistsize=1";
+
+                //OrderInfo currentOrder2 = new OrderInfo();
+                //var currentOrderJSONString = JsonConvert.SerializeObject();
 
 
 
-            //var r = requestUrl.post(url, headers = header, data = json.dumps(payload))
-            //api_response = json.loads(r.text)
-            //output = self.validator_helper(api_response)
+                //HttpResponseMessage response = await client.SendAsync(request);
+                //System.Console.WriteLine(response);
+                //HttpResponseMessage response = null;
 
-            //HttpResponseMessage response = await client.SendAsync(request);
-            //System.Console.WriteLine(response);
-            //HttpResponseMessage response = null;
-
-            //string uri = "https://o5yv1ecpk1.execute-api.us-west-2.amazonaws.com/dev/api/v1/meal/order";
-            //response = await client.PostAsync(uri, content);
-            //var result = await response.Content.ReadAsStringAsync();
-        }
+                //string uri = "https://o5yv1ecpk1.execute-api.us-west-2.amazonaws.com/dev/api/v1/meal/order";
+                //response = await client.PostAsync(uri, content);
+                //var result = await response.Content.ReadAsStringAsync();
+            }
 
         private HttpContent Json(object jsonData, object allowGet)
         {

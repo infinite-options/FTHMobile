@@ -18,7 +18,7 @@
                         
                         <StackLayout Orientation="Horizontal">
                             <!--<Label Text="Accepting Orders: " FontAttributes="Bold" FontSize="Micro" Opacity="{Binding opacity}"/>-->
-                            <Label Text="{Binding open_hours}" FontSize="Micro" Opacity="{Binding opacity}"/>
+                            <!--<Label Text="{Binding open_hours}" FontSize="Micro" Opacity="{Binding opacity}"/>-->
                             <!--<Label Text="{Binding status}" FontSize="Small" FontAttributes="Bold, Italic" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" TextColor="{Binding statusColor}" Opacity="{Binding opacity}"/>-->
                             <Image Source="truck.png" WidthRequest="20" HeightRequest="20"/>
                             <Image Source="walking.png" WidthRequest="20" HeightRequest="20"/>

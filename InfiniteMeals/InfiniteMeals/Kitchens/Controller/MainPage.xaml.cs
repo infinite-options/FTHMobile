@@ -33,6 +33,7 @@ namespace InfiniteMeals
                 JObject foodbanks = JObject.Parse(kitchensString);
                 this.Kitchens.Clear();
 
+
                 foreach (var k in foodbanks["result"]["result"])
                 {
                     Boolean businessIsOpen;

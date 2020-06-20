@@ -51,6 +51,7 @@ namespace InfiniteMeals
 
                 Console.WriteLine("foodbank id ", foodbank_id);
 
+
                 foreach (var k in foodbanks["result"]["result"])
                 {
                     if (foodbank_id == k["foodbank_id"].ToString())
@@ -61,9 +62,8 @@ namespace InfiniteMeals
                             title = foodbankID,
                             imageString = k["fl_image"].ToString(),
                             price = k["fl_value_in_dollars"].ToString(),
-                            foodbank_id = "foodbank_id",
-                            id = "id",
-                            kitchen_name = "kitchen_name",
+                            foodbank_id = k["foodbank_id"].ToString(),
+                            id = k["food_id"].ToString(),
                             qty = 0
 
 
