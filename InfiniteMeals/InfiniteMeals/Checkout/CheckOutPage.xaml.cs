@@ -42,15 +42,20 @@ namespace InfiniteMeals
         string kitchenZipcode;
 
         
-        public Label cartReviewLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 23, HeightRequest = 45, MinimumWidthRequest = 170, Text = "Cart Review", Margin = 5};
-        public Label nameLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 20, HeightRequest = 45, MinimumWidthRequest = 170, Text = "Second Harvest Food Bank", Margin = 8 };
+        public Label cartReviewLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 21, HeightRequest = 45, MinimumWidthRequest = 170, Text = "Cart Review", Margin = 5};
 
+        public Label nameLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 18, HeightRequest = 45, MinimumWidthRequest = 170, Text = "Second Harvest Food Bank", Margin = 8 };
 
-        public Image cartImage = new Image() { VerticalOptions = LayoutOptions.Center, Source = "truck.png", HeightRequest = 60, MinimumWidthRequest = 170, Margin = new Thickness(180, 120, 0, 0)};
-        public Label confirmLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 20, HeightRequest = 45, MinimumWidthRequest = 170, Text = "Confirm Order", Margin = 0 };
-        public Label addressLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 15, HeightRequest = 25, MinimumWidthRequest = 170, Text = "123 Santa Clara, CA 95120", Margin = 5 };
+        public Image logoImage = new Image() { VerticalOptions = LayoutOptions.Center, Source = "logo.png", HeightRequest = 60, MinimumWidthRequest = 170};
+        public Label confirmLabel = new Label() { VerticalOptions = LayoutOptions.Center, FontSize = 15, HeightRequest = 25, MinimumWidthRequest = 170, Text = "Confirm Pickup", Margin = 0 };
+        public Label addressLabel = new Label() { VerticalOptions = LayoutOptions.Center, FontSize = 12, HeightRequest = 25, MinimumWidthRequest = 170, Text = "123 Santa Clara, CA 95120", Margin = 5 };
 
+        public Button pickupCheckoutButton = new Button() { FontSize = 10, Text = "Pickup Checkout", Margin = 5, BackgroundColor=Color.White, HeightRequest=50 };
 
+        public Image truckImage = new Image() { VerticalOptions = LayoutOptions.Center, Source = "truck.png", HeightRequest = 40, MinimumWidthRequest = 130 };
+        public Label confirmDeliveryLabel = new Label() { VerticalOptions = LayoutOptions.Center, FontSize = 15, HeightRequest = 25, MinimumWidthRequest = 170, Text = "Confirm Delivery", Margin = 5 };
+
+        //public Button deliveryCheckoutButton = new Button() { FontSize = 10, Text = "Delivery Checkout", Margin = 5, BackgroundColor = Color.White, HeightRequest = 50 };
 
 
 
@@ -108,12 +113,12 @@ namespace InfiniteMeals
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
 
             var grid1 = new StackLayout() { Orientation = StackOrientation.Vertical, MinimumHeightRequest = 150, Margin = 0 };
-            var grid1Half = new StackLayout() { Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 150, Margin = 0 };
+            var grid1Half = new StackLayout() { Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 80, Margin = 0 };
             var grid2 = new StackLayout() { Orientation = StackOrientation.Vertical, MinimumHeightRequest = 150, Margin = 0 };
-            var grid2Half = new StackLayout() { Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 150, Margin = 0 };
+            var grid2Half = new StackLayout() { HorizontalOptions = LayoutOptions.Center, Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 150, Margin = 0 };
             var grid3 = new StackLayout() { Orientation = StackOrientation.Vertical, MinimumHeightRequest = 150, Margin = 0 };
-            var grid4 = new StackLayout() { Orientation = StackOrientation.Vertical, MinimumHeightRequest = 50, Margin = 0 };
-            var grid5 = new StackLayout() { Orientation = StackOrientation.Horizontal, Margin = 0 };
+            var grid4 = new StackLayout() { HorizontalOptions = LayoutOptions.Center, Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 150, Margin = 0, TranslationY = 10 };
+            var grid5 = new StackLayout() { Orientation = StackOrientation.Vertical, MinimumHeightRequest = 150, Margin = 0,  TranslationY = 10  };
 
 
             var addressFieldStackLayout = new StackLayout() { Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 45, HorizontalOptions = LayoutOptions.FillAndExpand };
@@ -130,10 +135,13 @@ namespace InfiniteMeals
             {
                 if (meal1.order_qty >= 1)
                 {
-                    var mealImage = new Image() { Source = meal1.imageString, HeightRequest = 60, MinimumWidthRequest = 60 };
-                    var mealQuantity = new Label() { Text = meal1.order_qty.ToString(), FontSize = 20 };
-                    imageLayout.Children.Add(mealImage);
-                    imageTextLayout.Children.Add(mealQuantity);
+                    var imageText = new StackLayout() { Orientation = StackOrientation.Vertical, HorizontalOptions=LayoutOptions.Center, MinimumHeightRequest = 0};
+
+                    var mealImage = new Image() { Source = meal1.imageString, HeightRequest = 70, MinimumWidthRequest = 70 };
+                    var mealQuantity = new Label() { Text = meal1.order_qty.ToString(), FontSize = 20, TranslationY = -60, TranslationX = 40, TextColor=Color.White };
+                    imageText.Children.Add(mealImage);
+                    imageText.Children.Add(mealQuantity);
+                    imageLayout.Children.Add(imageText);
                 }
             }
 
@@ -143,32 +151,32 @@ namespace InfiniteMeals
             grid1.Children.Add(imageLayout);
             grid1.Children.Add(imageTextLayout);
 
-            //grid1Half.Children.Add(imageLayout);
-            //grid1Half.Children.Add(imageTextLayout);
-
-
-            //grid2Half.Children.Add(cartImage);
             grid2.Children.Add(confirmLabel);
             grid2.Children.Add(addressLabel);
-            //grid2Half.Children.Add(grid2);
 
+            grid2Half.Children.Add(logoImage);
+            grid2Half.Children.Add(grid2);
 
-            //grid4.Children.Add(orderTitleLabel);
+            grid3.Children.Add(pickupCheckoutButton);
 
-            grid5.Children.Add(orderNamesStackLayout);
-            grid5.Children.Add(orderPriceAndQtyLayout);
+            grid4.Children.Add(truckImage);
+            grid4.Children.Add(confirmDeliveryLabel);
+
+            //grid5.Children.Add(deliveryCheckoutButton);
+
+            //grid5.Children.Add(orderNamesStackLayout);
+            //grid5.Children.Add(orderPriceAndQtyLayout);
 
 
             grid.Children.Add(grid1);
-            //grid.Children.Add(grid1Half);
             grid.Children.Add(grid2Half);
-            grid.Children.Add(grid2);
+            //grid.Children.Add(grid2);
             grid.Children.Add(grid3);
             grid.Children.Add(grid4);
             grid.Children.Add(grid5);
 
             Grid.SetRow(grid1, 0);
-            Grid.SetRow(grid2, 1);
+            Grid.SetRow(grid2Half, 1);
             Grid.SetRow(grid3, 2);
             Grid.SetRow(grid4, 3);
             Grid.SetRow(grid5, 4);
@@ -179,7 +187,7 @@ namespace InfiniteMeals
                 Content = grid
             };
 
-            var checkoutButton = new Button() { Text = "Confirm Checkout", HeightRequest = 40, Margin = new Thickness(20, 10, 20, 10), BorderWidth = 0.5, BorderColor = Color.Gray};
+            var checkoutButton = new Button() { FontSize = 10, Text = "Delivery Checkout", Margin = 5, BackgroundColor = Color.White, HeightRequest = 50 };
             checkoutButton.Clicked += Handle_Clicked();
 
 
@@ -209,7 +217,7 @@ namespace InfiniteMeals
             await Application.Current.SavePropertiesAsync();
 
             await sendOrderRequest(currentOrder);
-            Device.OpenUri(new System.Uri("https://servingnow.me/payment/" + currentOrder.customer_id));
+            //Device.OpenUri(new System.Uri("https://servingnow.me/payment/" + currentOrder.customer_id));
 
             //await Navigation.PopModalAsync();
             // "(Copyright Symbol) 2019 Infinite Options   v1.2"
