@@ -10,11 +10,7 @@ namespace InfiniteMeals
         public Login()
         {
             InitializeComponent();
-        }
-
-        private void clearText(Entry sender, System.EventArgs e)
-        {
-            sender.Text = "";
+            BackgroundImageSource = "back.png";
         }
 
         async void loginClick(object sender, System.EventArgs e)

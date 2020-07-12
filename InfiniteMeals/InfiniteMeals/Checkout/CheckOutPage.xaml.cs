@@ -32,30 +32,20 @@ namespace InfiniteMeals
     public partial class CheckOutPage : ContentPage
     {
         OrderInfo currentOrder = new OrderInfo();
-
         ObservableCollection<MealsModel> mealsOrdered = new ObservableCollection<MealsModel>();
 
         double totalCostsForMeals = 0;
-
         double calculatedTaxAmount = 0;
-
         string kitchenZipcode;
-
         
         public Label cartReviewLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 21, HeightRequest = 45, MinimumWidthRequest = 170, Text = "Cart Review", Margin = 5};
-
         public Label nameLabel = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalTextAlignment = TextAlignment.Center, FontSize = 18, HeightRequest = 45, MinimumWidthRequest = 170, Text = "Second Harvest Food Bank", Margin = 8 };
-
         public Image logoImage = new Image() { VerticalOptions = LayoutOptions.Center, Source = "logo.png", HeightRequest = 60, MinimumWidthRequest = 170};
         public Label confirmLabel = new Label() { VerticalOptions = LayoutOptions.Center, FontSize = 15, HeightRequest = 25, MinimumWidthRequest = 170, Text = "Confirm Pickup", Margin = 0 };
         public Label addressLabel = new Label() { VerticalOptions = LayoutOptions.Center, FontSize = 12, HeightRequest = 25, MinimumWidthRequest = 170, Text = "123 Santa Clara, CA 95120", Margin = 5 };
-
         public Button pickupCheckoutButton = new Button() { FontSize = 10, Text = "Pickup Checkout", Margin = 5, BackgroundColor=Color.White, HeightRequest=50 };
-
         public Image truckImage = new Image() { VerticalOptions = LayoutOptions.Center, Source = "truck.png", HeightRequest = 40, MinimumWidthRequest = 130 };
         public Label confirmDeliveryLabel = new Label() { VerticalOptions = LayoutOptions.Center, FontSize = 15, HeightRequest = 25, MinimumWidthRequest = 170, Text = "Confirm Delivery", Margin = 5 };
-
-        //public Button deliveryCheckoutButton = new Button() { FontSize = 10, Text = "Delivery Checkout", Margin = 5, BackgroundColor = Color.White, HeightRequest = 50 };
 
 
 
@@ -64,11 +54,9 @@ namespace InfiniteMeals
             InitializeComponent();
 
             kitchenZipcode = kitchen_zipcode;
-
             mealsOrdered = meals;
+
             SetupUI();
-
-
 
             currentOrder.kitchen_id = foodbank_id;
             currentOrder.customer_id = "12345";
@@ -102,7 +90,6 @@ namespace InfiniteMeals
 
         void SetupUI()
         {
-
             var mainStackLayout = new StackLayout() { Orientation = StackOrientation.Vertical };
 
             var grid = new Grid();
@@ -122,9 +109,6 @@ namespace InfiniteMeals
 
 
             var addressFieldStackLayout = new StackLayout() { Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 45, HorizontalOptions = LayoutOptions.FillAndExpand };
-
-
-
             var orderNamesStackLayout = new StackLayout() { Orientation = StackOrientation.Vertical, HorizontalOptions = LayoutOptions.StartAndExpand, Margin = 10 };
             var orderPriceAndQtyLayout = new StackLayout() { Orientation = StackOrientation.Vertical, HorizontalOptions = LayoutOptions.EndAndExpand};
             var imageLayout = new StackLayout() { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.Center };
@@ -149,8 +133,8 @@ namespace InfiniteMeals
             grid1.Children.Add(cartReviewLabel);
             grid1.Children.Add(nameLabel);
             grid1.Children.Add(imageLayout);
-            grid1.Children.Add(imageTextLayout);
 
+            grid1.Children.Add(imageTextLayout);
             grid2.Children.Add(confirmLabel);
             grid2.Children.Add(addressLabel);
 
@@ -162,15 +146,9 @@ namespace InfiniteMeals
             grid4.Children.Add(truckImage);
             grid4.Children.Add(confirmDeliveryLabel);
 
-            //grid5.Children.Add(deliveryCheckoutButton);
-
-            //grid5.Children.Add(orderNamesStackLayout);
-            //grid5.Children.Add(orderPriceAndQtyLayout);
-
 
             grid.Children.Add(grid1);
             grid.Children.Add(grid2Half);
-            //grid.Children.Add(grid2);
             grid.Children.Add(grid3);
             grid.Children.Add(grid4);
             grid.Children.Add(grid5);
@@ -215,12 +193,7 @@ namespace InfiniteMeals
             ((Button)sender).IsEnabled = false;
 
             await Application.Current.SavePropertiesAsync();
-
             await sendOrderRequest(currentOrder);
-            //Device.OpenUri(new System.Uri("https://servingnow.me/payment/" + currentOrder.customer_id));
-
-            //await Navigation.PopModalAsync();
-            // "(Copyright Symbol) 2019 Infinite Options   v1.2"
         }
             
 
@@ -234,42 +207,21 @@ namespace InfiniteMeals
 
         async Task sendOrderRequest(OrderInfo currentOrder)
         {
-
             var currentOrderJSONString = JsonConvert.SerializeObject(currentOrder);
-
 
             Console.WriteLine(currentOrderJSONString);
 
-
-            //JObject currentOrderJSON = JObject.Parse(currentOrderJSONString);
-            //System.Console.WriteLine(currentOrderJSON.GetType());
             var content = new StringContent(currentOrderJSONString, Encoding.UTF8, "application/json");
 
             using (var httpClient = new HttpClient())
             {
-                //System.Console.WriteLine(JsonConvert.SerializeObject(content));
                 var request = new HttpRequestMessage();
                 request.Method = HttpMethod.Post;
                 request.Content = content;
-                //var responseString = await request.Content.ReadAsStringAsync();
                 var httpResponse = await httpClient.PostAsync("https://dc3so1gav1.execute-api.us-west-1.amazonaws.com/dev/api/v2/add_order", content);
                 Console.WriteLine("This is the response " + httpResponse);
             }
-
-
-                //OrderInfo currentOrder2 = new OrderInfo();
-                //var currentOrderJSONString = JsonConvert.SerializeObject();
-
-
-
-                //HttpResponseMessage response = await client.SendAsync(request);
-                //System.Console.WriteLine(response);
-                //HttpResponseMessage response = null;
-
-                //string uri = "https://o5yv1ecpk1.execute-api.us-west-2.amazonaws.com/dev/api/v1/meal/order";
-                //response = await client.PostAsync(uri, content);
-                //var result = await response.Content.ReadAsStringAsync();
-            }
+        }
 
         private HttpContent Json(object jsonData, object allowGet)
         {

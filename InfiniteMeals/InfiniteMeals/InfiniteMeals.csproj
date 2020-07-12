@@ -11,14 +11,14 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
     <PackageReference Include="XamarinFastEntry.Behaviors" Version="1.1.1" />
-    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.6.0.800" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.7.0.1080" />
     <PackageReference Include="Microsoft.Net.Http.Headers" Version="2.2.8" />
     <PackageReference Include="CData.UPS" Version="19.0.7354" />
-    <PackageReference Include="Json.Net" Version="1.0.22" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="4.6.0.800" />
+    <PackageReference Include="Json.Net" Version="1.0.23" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.7.0.1080" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Kitchens\" />

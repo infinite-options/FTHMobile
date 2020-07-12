@@ -1,127 +1,128 @@
 {
   "images": [
     {
-      "filename": "20x20@2x.png",
+      "filename": "Webp.net-resizeimage (37).png",
       "size": "20x20",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
-      "filename": "20x20@3x.png",
+      "filename": "Webp.net-resizeimage (36).png",
       "size": "20x20",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
-      "filename": "29x29@2x.png",
+      "filename": "Webp.net-resizeimage (35).png",
       "size": "29x29",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
-      "filename": "29x29@3x.png",
+      "filename": "Webp.net-resizeimage (34).png",
       "size": "29x29",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
-      "filename": "40x40@2x.png",
+      "filename": "Webp.net-resizeimage (33).png",
       "size": "40x40",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
-      "filename": "40x40@3x.png",
+      "filename": "Webp.net-resizeimage (32)-2.png",
       "size": "40x40",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
-      "filename": "60x60@2x.png",
+      "filename": "Webp.net-resizeimage (32)-1.png",
       "size": "60x60",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
-      "filename": "60x60@3x.png",
+      "filename": "Webp.net-resizeimage (31)-1.png",
       "size": "60x60",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
-      "filename": "20x20@1x.png",
+      "filename": "Webp.net-resizeimage (24).png",
       "size": "20x20",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
-      "filename": "20x20@2x.png",
+      "filename": "Webp.net-resizeimage (23).png",
       "size": "20x20",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
-      "filename": "29x29@1x.png",
+      "filename": "Webp.net-resizeimage (22).png",
       "size": "29x29",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
-      "filename": "29x29@2x.png",
+      "filename": "Webp.net-resizeimage (21).png",
       "size": "29x29",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon40.png",
+      "filename": "Webp.net-resizeimage (20).png",
       "size": "40x40",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
-      "filename": "40x40@2x.png",
+      "filename": "Webp.net-resizeimage (19)-1.png",
       "size": "40x40",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon167.png",
+      "filename": "Webp.net-resizeimage (16).png",
       "size": "83.5x83.5",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
-      "filename": "76x76@1x.png",
+      "filename": "Webp.net-resizeimage (18).png",
       "size": "76x76",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
-      "filename": "76x76@2x.png",
+      "filename": "Webp.net-resizeimage (17).png",
       "size": "76x76",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon1024.png",
+      "filename": "Webp.net-resizeimage copy-1.png",
       "size": "1024x1024",
       "scale": "1x",
       "idiom": "ios-marketing"
     },
     {
-      "filename": "120x120.png",
+      "filename": "Webp.net-resizeimage (8).png",
       "size": "60x60",
       "scale": "2x",
       "idiom": "car"
     },
     {
-      "filename": "Icon180.png",
+      "filename": "Webp.net-resizeimage (7).png",
       "size": "60x60",
       "scale": "3x",
       "idiom": "car"
     },
     {
       "role": "notificationCenter",
+      "filename": "Webp.net-resizeimage (19).png",
       "size": "24x24",
       "subtype": "38mm",
       "scale": "2x",
@@ -129,6 +130,7 @@
     },
     {
       "role": "notificationCenter",
+      "filename": "Webp.net-resizeimage (20)-1.png",
       "size": "27.5x27.5",
       "subtype": "42mm",
       "scale": "2x",
@@ -136,18 +138,21 @@
     },
     {
       "role": "companionSettings",
+      "filename": "Webp.net-resizeimage (21)-1.png",
       "size": "29x29",
       "scale": "2x",
       "idiom": "watch"
     },
     {
       "role": "companionSettings",
+      "filename": "Webp.net-resizeimage (22)-1.png",
       "size": "29x29",
       "scale": "3x",
       "idiom": "watch"
     },
     {
       "role": "appLauncher",
+      "filename": "Webp.net-resizeimage (23)-1.png",
       "size": "40x40",
       "subtype": "38mm",
       "scale": "2x",
@@ -155,6 +160,7 @@
     },
     {
       "role": "appLauncher",
+      "filename": "Webp.net-resizeimage (25)-1.png",
       "size": "44x44",
       "subtype": "40mm",
       "scale": "2x",
@@ -162,6 +168,7 @@
     },
     {
       "role": "appLauncher",
+      "filename": "Webp.net-resizeimage (26)-1.png",
       "size": "50x50",
       "subtype": "44mm",
       "scale": "2x",
@@ -169,6 +176,7 @@
     },
     {
       "role": "quickLook",
+      "filename": "Webp.net-resizeimage (16)-1.png",
       "size": "86x86",
       "subtype": "38mm",
       "scale": "2x",
@@ -176,6 +184,7 @@
     },
     {
       "role": "quickLook",
+      "filename": "Webp.net-resizeimage (17)-1.png",
       "size": "98x98",
       "subtype": "42mm",
       "scale": "2x",
@@ -183,66 +192,74 @@
     },
     {
       "role": "quickLook",
+      "filename": "Webp.net-resizeimage (18)-1.png",
       "size": "108x108",
       "subtype": "44mm",
       "scale": "2x",
       "idiom": "watch"
     },
     {
-      "filename": "Icon1024.png",
+      "filename": "Icon.png",
       "size": "1024x1024",
       "scale": "1x",
       "idiom": "watch-marketing"
     },
     {
+      "filename": "Webp.net-resizeimage (11).png",
       "size": "16x16",
       "scale": "1x",
       "idiom": "mac"
     },
     {
+      "filename": "Webp.net-resizeimage (12).png",
       "size": "16x16",
       "scale": "2x",
       "idiom": "mac"
     },
     {
+      "filename": "Webp.net-resizeimage (12)-1.png",
       "size": "32x32",
       "scale": "1x",
       "idiom": "mac"
     },
     {
+      "filename": "Webp.net-resizeimage (13).png",
       "size": "32x32",
       "scale": "2x",
       "idiom": "mac"
     },
     {
+      "filename": "Webp.net-resizeimage (14).png",
       "size": "128x128",
       "scale": "1x",
       "idiom": "mac"
     },
     {
+      "filename": "Webp.net-resizeimage (15).png",
       "size": "128x128",
       "scale": "2x",
       "idiom": "mac"
     },
     {
+      "filename": "Webp.net-resizeimage (10).png",
       "size": "256x256",
       "scale": "1x",
       "idiom": "mac"
     },
     {
-      "filename": "Icon512.png",
+      "filename": "Webp.net-resizeimage (9)-1.png",
       "size": "256x256",
       "scale": "2x",
       "idiom": "mac"
     },
     {
-      "filename": "Icon512.png",
+      "filename": "Webp.net-resizeimage (9).png",
       "size": "512x512",
       "scale": "1x",
       "idiom": "mac"
     },
     {
-      "filename": "Icon1024.png",
+      "filename": "Icon.png",
       "size": "512x512",
       "scale": "2x",
       "idiom": "mac"

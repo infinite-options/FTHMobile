@@ -27,7 +27,6 @@ namespace InfiniteMeals
 
             var request = new HttpRequestMessage();
             request.RequestUri = new Uri("https://dc3so1gav1.execute-api.us-west-1.amazonaws.com/dev/api/v2/foodbankinfo");
-            //https://phaqvwjbw6.execute-api.us-west-1.amazonaws.com/dev/api/v1/meals/" + kitchen_id
             request.Method = HttpMethod.Get;
             var client = new HttpClient();
             HttpResponseMessage response = await client.SendAsync(request);
@@ -57,23 +56,17 @@ namespace InfiniteMeals
                     if (foodbank_id == k["foodbank_id"].ToString())
                     {
                         string foodbankID = k["food_name"].ToString();
+                        string cleanedUpImageString = cleanUpImageString(k["fl_image"].ToString());
+
                         this.Meals.Add(new MealsModel()
                         {
                             title = foodbankID,
-                            imageString = k["fl_image"].ToString(),
+                            imageString = cleanedUpImageString,
                             price = k["fl_value_in_dollars"].ToString(),
                             foodbank_id = k["foodbank_id"].ToString(),
                             id = k["food_id"].ToString(),
                             qty = 0
 
-
-                            //imageString = m["photo"]["S"].ToString(),
-                            //title = m["meal_name"]["S"].ToString(),
-                            //price = m["price"]["S"].ToString(),
-                            //description = m["description"]["S"].ToString(),
-                            //kitchen_id = m["kitchen_id"]["S"].ToString(),
-                            //id = m["meal_id"]["S"].ToString(),
-                            //qty = 0
                         }
                         ) ;
 
@@ -104,6 +97,24 @@ namespace InfiniteMeals
                 GetMeals(foodbankID);
                 mealsListView.IsRefreshing = false;
             });
+        }
+
+        public String cleanUpImageString(String imageString)
+        {
+            String cleaned = "";
+            foreach(var letter in imageString)
+            {
+                if (!(letter.Equals("?".ToCharArray()[0])))
+                {
+                    cleaned += letter;
+                    Console.WriteLine(cleaned);
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return cleaned;
         }
 
         async void Handle_Clicked(object sender, System.EventArgs e)

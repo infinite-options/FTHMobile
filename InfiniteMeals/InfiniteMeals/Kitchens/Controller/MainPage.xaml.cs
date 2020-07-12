@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 using InfiniteMeals.Kitchens.Model;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using Xamarin.Forms.Internals;
 
 namespace InfiniteMeals
 {
@@ -21,7 +22,7 @@ namespace InfiniteMeals
         {
             var request = new HttpRequestMessage();
             request.RequestUri = new Uri("https://dc3so1gav1.execute-api.us-west-1.amazonaws.com/dev/api/v2/foodbanks");
-                //request.RequestUri = new Uri("https://phaqvwjbw6.execute-api.us-west-1.amazonaws.com/dev/api/v1/kitchens");
+            //request.RequestUri = new Uri("https://phaqvwjbw6.execute-api.us-west-1.amazonaws.com/dev/api/v1/kitchens");
 
             request.Method = HttpMethod.Get;
             var client = new HttpClient();
@@ -45,32 +46,6 @@ namespace InfiniteMeals
                     string dayString = DateTime.Today.DayOfWeek.ToString().ToLower();
                     string togetherString = "fb_" + dayString + "_time";
 
-
-
-                    //if ((Boolean)k["isOpen"]["BOOL"] == false)
-                    //{
-                    //    accepting_hours = "Not accepting orders, no meals";
-                    //    businessIsOpen = false;
-                    //}
-                    //else if ((Boolean)k["is_accepting_24hr"]["BOOL"] == true)
-                    //{
-                    //    accepting_hours = "24 hours";
-                    //    businessIsOpen = true;
-                    //}
-                    //else
-                    //{
-
-                    //    string start_time_12 = ConvertFromToTime((string)k["accepting_hours"]["L"][dayOfWeekIndex]["M"]["open_time"]["S"], "HH:mm", "h:mm tt");
-                    //    string end_time_12 = ConvertFromToTime((string)k["accepting_hours"]["L"][dayOfWeekIndex]["M"]["close_time"]["S"], "HH:mm", "h:mm tt");
-                    //    string start_time_24 = (string)k["accepting_hours"]["L"][dayOfWeekIndex]["M"]["open_time"]["S"];
-                    //    string end_time_24 = (string)k["accepting_hours"]["L"][dayOfWeekIndex]["M"]["close_time"]["S"];
-                    //    Boolean isAccepting = (Boolean)k["accepting_hours"]["L"][dayOfWeekIndex]["M"]["is_accepting"]["BOOL"];
-                    //    businessIsOpen = isBusinessOpen(TimeSpan.Parse(start_time_24), TimeSpan.Parse(end_time_24), isAccepting);
-                    //    accepting_hours = whenAccepting(businessIsOpen, k, dayOfWeekIndex);
-                    //}
-                    //string delivery_hours = whenDelivering(dayOfWeekIndex, k);
-
-
                     this.Kitchens.Add(new KitchensModel()
                     {
                         foodbank_id = k["foodbank_id"].ToString(),
@@ -80,38 +55,7 @@ namespace InfiniteMeals
                         foodbank_address = k["fb_address1"].ToString(),
                         open_hours = k[togetherString].ToString()
 
-
-                        //        foodbank_id": "800 - 000001",
-                        //        "tag_line": "Best food ever",
-                        //        "foodbank_address": "123 xyz",
-                        //        "foodbank_city": "San Jose",
-                        //        "foodbank_state": "CA",
-                        //        "foodbank_zip": 95123,
-                        //        "foodbank_name": "Second Harvest Food Bank",
-                        //        "form": "[\"600-000001\", \"600-000002\"]",
-                        //        "monday": "10:00-5:00",
-                        //        "tuesday": "11:00-3:00",
-                        //        "foodbank_phone": null,
-                        //        "thursday": "10:00-5:00",
-                        //        "friday": "2:00-5:00",
-                        //        "saturday": "11:00-3:00",
-                        //        "sunday": "11:00-3:00",
-                        //        "wednesday": "10:00-5:00"
-
-
-
-                        //    kitchen_id = k["foodbank_id"].ToString()
-                        //    //zipcode = formatZipcode(k["zipcode"]["S"].ToString()),
-                        //    //title = k["kitchen_name"]["S"].ToString(),
-                        //    //open_hours = accepting_hours,
-                        //    //delivery_period = delivery_hours,
-                        //    //description = k["description"]["S"].ToString(),
-                        //    //isOpen = businessIsOpen,
-                        //    //status = (businessIsOpen == true) ? "Open now" : "Closed",
-                        //    //statusColor = (businessIsOpen == true) ? "Green" : "Red",
-                        //    //opacity = (businessIsOpen == true) ? "1.0" : "0.6"
-                    }
-                    );
+                    });
                 }
 
                 kitchensListView.ItemsSource = Kitchens;
@@ -123,10 +67,6 @@ namespace InfiniteMeals
         {
             InitializeComponent();
 
-            GetKitchens();
-
-            //Kitchens.Clear();
-
             kitchensListView.RefreshCommand = new Command(() =>
             {
                 GetKitchens();
@@ -136,6 +76,12 @@ namespace InfiniteMeals
             kitchensListView.ItemSelected += Handle_ItemTapped();
 
         }
+
+        protected override async void OnAppearing()
+        {
+            GetKitchens();
+        }
+
 
         private EventHandler<SelectedItemChangedEventArgs> Handle_ItemTapped()
         {
@@ -156,18 +102,17 @@ namespace InfiniteMeals
             parseFoods(foodbank.foodbank_id);
 
 
-
-            // disable selection if the kitchen is closed
-            //if (foodbank.isOpen == false)
-            //{
-            //    return;c
-            //}
-
-
-            //await Navigation.PushAsync(new Login());
-
             await Navigation.PushAsync(new SelectMealOptions(foodbank.foodbank_id, foodbank.foodbank_name, foodbank.foodbank_zip));
         }
+
+
+        private double calcDistance(double pos1, double pos2)
+        {
+            return Math.Sqrt(pos1*pos1 + pos2*pos2);
+        }
+
+
+
 
         //  Get integer index of day of the week, with 0 as Sunday
         private int getDayOfWeekIndex(DateTime day)
@@ -251,72 +196,8 @@ namespace InfiniteMeals
         }
 
 
-
-                //  When is the business accepting orders?
-                //private string whenAccepting(Boolean businessIsOpen, JToken k, int dayOfWeekIndex)
-                //{
-                //    string end_time_12 = ConvertFromToTime((string)k["accepting_hours"]["L"][dayOfWeekIndex]["M"]["close_time"]["S"], "HH:mm", "h:mm tt");
-                //    string end_time_24 = (string)k["accepting_hours"]["L"][dayOfWeekIndex]["M"]["close_time"]["S"];
-                //    if (businessIsOpen == true)
-                //    {
-                //        return "Until " + end_time_12;
-                //    }
-                //    int nextOpenDay = nextPeriodDayIndex(dayOfWeekIndex, k, "accepting_hours", "is_accepting", isAlreadyClosed(TimeSpan.Parse(end_time_24)));
-                //    if (nextOpenDay == -1)
-                //    {
-                //        return "Not currently accepting orders";
-                //    }
-                //    string next_day;
-                //    if (nextOpenDay == dayOfWeekIndex)
-                //    {
-                //        next_day = "today";
-                //    }
-                //    else if (nextOpenDay == (dayOfWeekIndex + 1) % 7)
-                //    {
-                //        next_day = "tomorrow";
-                //    }
-                //    else
-                //    {
-                //        next_day = getDayOfWeekFromIndex(nextOpenDay);
-                //    }
-                //    return "Starting " + next_day + " " + ConvertFromToTime((string)k["accepting_hours"]["L"][nextOpenDay]["M"]["open_time"]["S"], "HH:mm", "h:mm tt");
-                //}
-
-                //  When is the next delivery period?
-                //private string whenDelivering(int dayOfWeekIndex, JToken k)
-                //{
-                //    int nextDeliveryDayIndex = nextPeriodDayIndex(dayOfWeekIndex, k, "delivery_hours", "is_delivering", 1);
-                //    if (nextDeliveryDayIndex != -1)
-                //    {
-                //        var deliveryOpenTime = ConvertFromToTime((string)k["delivery_hours"]["L"][nextDeliveryDayIndex]["M"]["open_time"]["S"], "HH:mm", "h:mm tt");
-                //        var deliveryCloseTime = ConvertFromToTime((string)k["delivery_hours"]["L"][nextDeliveryDayIndex]["M"]["close_time"]["S"], "HH:mm", "h:mm tt");
-                //        return getDayOfWeekFromIndex(nextDeliveryDayIndex) + " " + deliveryOpenTime + " - " + deliveryCloseTime;
-                //    }
-                //    else
-                //    {
-                //        return "Not currently delivering";
-                //    }
-                //}
-
-                //  Get integer index of day of the week of next time (accepting or delivering) period, with 0 as Sunday
-                //  3rd and 4th arguments take kitchen API list and boolean keys (e.g. delivery_hours and is_delivering)
-                //  5th argument takes the number of days to wait before beginning the check. For instance, if you want to find the next delivery period starting the day after today, argument should be 1.
-                //private int nextPeriodDayIndex(int dayOfTheWeek, JToken kitchen, string list_key, string bool_key, int dayDelay)
-                //{
-                //    int dayIndex;
-                //    for (int i = dayDelay; i < dayDelay + 7; i++)
-                //    {
-                //        dayIndex = (dayOfTheWeek + i) % 7;
-                //        if ((Boolean)kitchen[list_key]["L"][dayIndex]["M"][bool_key]["BOOL"] == true)
-                //        {
-                //            return dayIndex;
-                //        }
-                //    }
-                //    return -1;
-                //}
-
-                //  Function checking if business is currently open
-                private Boolean isBusinessOpen(TimeSpan open_time, TimeSpan close_time, Boolean is_accepting)
+        //  Function checking if business is currently open
+        private Boolean isBusinessOpen(TimeSpan open_time, TimeSpan close_time, Boolean is_accepting)
         {
             TimeSpan now = DateTime.Now.TimeOfDay;
             //  Accepting orders on current day?

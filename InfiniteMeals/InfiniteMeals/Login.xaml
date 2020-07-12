@@ -1,26 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="InfiniteMeals.Login">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="Center">
         <!-- Place new controls here -->
-            <Image Source="back.png" Aspect="AspectFit" />
-            
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                <Label Text="Feed The Hungry" FontSize="30" TextColor="White" Margin="0, 0, 0, 0" HorizontalOptions="Center"/>
 
-            <Label Text="Feed The Hungry" FontSize="30" TextColor="White" Margin="0, -750, 0, 0" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="googleIcon.png" Margin="0,100,30,0" WidthRequest="20" HeightRequest="20"></Image>
+                    <Image Source="facebookIcon.png" Margin="0,100,0,0" WidthRequest="20" HeightRequest="20"></Image>
+                </StackLayout>
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Image Source="googleIcon.png" Margin="0,100,30,0" WidthRequest="20" HeightRequest="20"></Image>
-                <Image Source="facebookIcon.png" Margin="0,100,0,0" WidthRequest="20" HeightRequest="20"></Image>
+                <Entry Text="email" FontSize="15" Margin="30, 10, 0, 0" HorizontalOptions="Center" HorizontalTextAlignment="Center" WidthRequest="300" TextColor="White"/>
+
+                <Entry Text="password" FontSize="15" Margin="30, 0, 0, 0" HorizontalOptions="Center" HorizontalTextAlignment="Center" WidthRequest="300" TextColor="White"/>
+
+                <Button Clicked="loginClick" Text="log in" Margin="0, 90, 0, 0"></Button>
+
+                <Button Clicked="signUpClick" Text="sign up" Margin="0, 20, 0, 0"></Button>
             </StackLayout>
-
-            <Entry Text="email" FontSize="15" Margin="30, 10, 0, 0" HorizontalOptions="Center" HorizontalTextAlignment="Center" WidthRequest="300" TextColor="White" TextChanged="clearText"/>
-
-            <Entry Text="password" FontSize="15" Margin="30, -20, 0, 0" HorizontalOptions="Center" HorizontalTextAlignment="Center" WidthRequest="300" TextColor="White" TextChanged="clearText"/>
-
-            <Button Clicked="loginClick" Text="log in" Margin="0, 90, 0, 0"></Button>
-
-            <Button Clicked="signUpClick" Text="sign up" Margin="0, 20, 0, 0"></Button>
-
 
         </StackLayout>
 

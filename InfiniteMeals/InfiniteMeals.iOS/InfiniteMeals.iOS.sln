@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfiniteMeals.iOS", "InfiniteMeals.iOS.csproj", "{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.Debug|iPhone.Build.0 = Debug|iPhone
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.Release|iPhone.ActiveCfg = Release|iPhone
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.Release|iPhone.Build.0 = Release|iPhone
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{DD6E2509-A8E4-4C1B-B14F-AA35BFA66411}.AppStore|iPhone.Build.0 = AppStore|iPhone
+	EndGlobalSection
+EndGlobal

@@ -29,7 +29,7 @@
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: Jeremy Manalo (RHJL94U6CR)</CodesignKey>
+    <CodesignKey>Apple Development: John Baer (67UUGS742T)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -41,7 +41,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: Jeremy Manalo (RHJL94U6CR)</CodesignKey>
+    <CodesignKey>Apple Development: John Baer (67UUGS742T)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,7 +53,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer: Jeremy Manalo (RHJL94U6CR)</CodesignKey>
+    <CodesignKey>Apple Development: John Baer (67UUGS742T)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
@@ -66,9 +66,10 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution: Infinite Options, LLC (8V66NC2T37)</CodesignKey>
+    <CodesignKey>Apple Development: John Baer (67UUGS742T)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>Jeremy Manalo</CodesignProvision>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <MtouchExtraArgs>--optimize=experimental-xforms-product-type</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -80,7 +81,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <BuildIpa>True</BuildIpa>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: Jeremy Manalo (RHJL94U6CR)</CodesignKey>
+    <CodesignKey>Apple Development: John Baer (67UUGS742T)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
@@ -91,7 +92,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer: Jeremy Manalo (RHJL94U6CR)</CodesignKey>
+    <CodesignKey>Apple Development: John Baer (67UUGS742T)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
@@ -105,15 +106,6 @@
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
@@ -138,22 +130,47 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\IconTL29pt2x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\IconTL40pt2x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120x120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon512.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20x20%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20x20%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29x29%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29x29%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40x40%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40x40%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60x60%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60x60%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20x20%401x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29x29%401x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76x76%401x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76x76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage copy-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2816%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2818%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2817%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2820%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2819%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2822%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2821%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2824%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2823%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %288%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %287%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %289%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %289%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2810%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2811%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2812%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2812%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2813%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2814%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2815%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2816%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2817%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2818%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2819%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2820%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2821%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2822%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2823%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2825%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2826%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2832%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2831%29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2832%29-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2833%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2834%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2835%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2837%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %2836%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -162,7 +179,7 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.9" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -175,5 +192,20 @@
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
     <ITunesArtwork Include="iTunesArtwork" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\back.png" />
+    <BundleResource Include="Resources\facebookIcon.png" />
+    <BundleResource Include="Resources\googleIcon.png" />
+    <BundleResource Include="Resources\googlemaps.png" />
+    <BundleResource Include="Resources\logo.png" />
+    <BundleResource Include="Resources\minusButton.png" />
+    <BundleResource Include="Resources\optionsIcon.png" />
+    <BundleResource Include="Resources\plusButton.png" />
+    <BundleResource Include="Resources\searchIcon.png" />
+    <BundleResource Include="Resources\shoppingCart.png" />
+    <BundleResource Include="Resources\truck.png" />
+    <BundleResource Include="Resources\walking.png" />
+    <BundleResource Include="Resources\Icon.png" />
   </ItemGroup>
 </Project>

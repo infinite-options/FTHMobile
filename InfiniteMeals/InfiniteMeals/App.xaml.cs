@@ -16,7 +16,6 @@ namespace InfiniteMeals
             MainPage = new NavigationPage(new Login())
             {
                 BarBackgroundColor = Color.White,
-                BarTextColor = Color.FromHex("#888888")
             };
             //MainPage = new MainPage();
         }
