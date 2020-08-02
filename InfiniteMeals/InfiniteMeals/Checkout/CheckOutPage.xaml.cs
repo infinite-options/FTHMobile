@@ -88,6 +88,11 @@ namespace InfiniteMeals
 
         }
 
+        TimePicker timePicker = new TimePicker
+        {
+            Time = new TimeSpan(4, 15, 26) // Time set to "04:15:26"
+        };
+
         void SetupUI()
         {
             var mainStackLayout = new StackLayout() { Orientation = StackOrientation.Vertical };
@@ -105,7 +110,7 @@ namespace InfiniteMeals
             var grid2Half = new StackLayout() { HorizontalOptions = LayoutOptions.Center, Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 150, Margin = 0 };
             var grid3 = new StackLayout() { Orientation = StackOrientation.Vertical, MinimumHeightRequest = 150, Margin = 0 };
             var grid4 = new StackLayout() { HorizontalOptions = LayoutOptions.Center, Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 150, Margin = 0, TranslationY = 10 };
-            var grid5 = new StackLayout() { Orientation = StackOrientation.Vertical, MinimumHeightRequest = 150, Margin = 0,  TranslationY = 10  };
+            var grid5 = new StackLayout() { Orientation = StackOrientation.Vertical, MinimumHeightRequest = 150, Margin = 0, HorizontalOptions = LayoutOptions.Center, TranslationY = 10  };
 
 
             var addressFieldStackLayout = new StackLayout() { Orientation = StackOrientation.Horizontal, MinimumHeightRequest = 45, HorizontalOptions = LayoutOptions.FillAndExpand };
@@ -133,8 +138,8 @@ namespace InfiniteMeals
             grid1.Children.Add(cartReviewLabel);
             grid1.Children.Add(nameLabel);
             grid1.Children.Add(imageLayout);
-
             grid1.Children.Add(imageTextLayout);
+
             grid2.Children.Add(confirmLabel);
             grid2.Children.Add(addressLabel);
 
@@ -146,6 +151,7 @@ namespace InfiniteMeals
             grid4.Children.Add(truckImage);
             grid4.Children.Add(confirmDeliveryLabel);
 
+            grid5.Children.Add(timePicker);
 
             grid.Children.Add(grid1);
             grid.Children.Add(grid2Half);

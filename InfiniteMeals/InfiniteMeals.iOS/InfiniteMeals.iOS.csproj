@@ -102,6 +102,9 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\SelectMealOptions.xaml.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' ">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -207,5 +210,7 @@
     <BundleResource Include="Resources\truck.png" />
     <BundleResource Include="Resources\walking.png" />
     <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\newBack.jpg" />
+    <BundleResource Include="Resources\iconImage.png" />
   </ItemGroup>
 </Project>

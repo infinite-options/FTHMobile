@@ -74,6 +74,7 @@
     <None Include="Resources\plusButton.png" />
     <None Include="Resources\minusButton.png" />
     <None Include="Resources\icon.png" />
+    <None Include="Resources\toolbarIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -141,6 +142,10 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\icon.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\toolbarIcon.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

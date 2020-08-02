@@ -4,7 +4,6 @@
         <ToolbarItem IconImageSource="optionsIcon.png" Order="Primary" Priority="0" ></ToolbarItem>
         <ToolbarItem IconImageSource="searchIcon.png" Order="Primary" Priority="1"></ToolbarItem>
         <ToolbarItem IconImageSource="googlemaps.png" Order="Primary" Priority="2"></ToolbarItem>
-
     </ContentPage.ToolbarItems>
 
     <ListView x:Name="kitchensListView" VerticalOptions="StartAndExpand" Footer="" HasUnevenRows="true" IsPullToRefreshEnabled="true">
