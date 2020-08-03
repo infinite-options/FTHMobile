@@ -94,6 +94,7 @@ namespace InfiniteMeals
                                         }
                                         System.Diagnostics.Debug.WriteLine("pre salt: " + this.emailEntry.Text);
                                         AccountSalt accountSalt = await retrieveAccountSalt(this.emailEntry.Text);
+                                        System.Diagnostics.Debug.WriteLine("salt: " + accountSalt.result[0]);
 
                                         if (accountSalt != null && accountSalt.result.Count != 0)
                                         {
@@ -331,7 +332,7 @@ namespace InfiniteMeals
                 LastName = this.lastNameEntry.Text,
                 PhoneNumber = this.phoneNumberEntry.Text,
                 WeeklyUpdates = this.weeklyUpdatesChecked.ToString(),
-                //Referral = this.referralPicker.SelectedItem.ToString(),
+                Referral = this.referralPicker.SelectedItem.ToString(),
                 Password = this.passwordEntry.Text
 
             };

@@ -19,13 +19,14 @@ namespace InfiniteMeals
         public string street = "";
         public string city = "";
         public string state = "";
-        public string kitchen_id = "";
         public string zipcode = "";
-        public string totalAmount = "";
+        public int totalAmount = 0;
         public string delivery_note = "";
-        public string latitude = "";
-        public string longitude = "";
+        public string kitchen_id = "";
+        public double longitude = 0;
+        public double latitude = 0;
         public string delivery_date = "";
+        public string order_type = "";
         public List<Dictionary<string, string>> ordered_items = new List<Dictionary<string, string>>() ;
     }
 
@@ -66,9 +67,10 @@ namespace InfiniteMeals
             currentOrder.state = "CA";
             currentOrder.zipcode = "95060";
             currentOrder.delivery_note = "Test delivery note";
-            currentOrder.latitude = "0.000";
-            currentOrder.longitude = "0.000";
+            currentOrder.latitude = 45.6;
+            currentOrder.longitude = 45.6;
             currentOrder.delivery_date = "today";
+            currentOrder.order_type = "delivery";
 
             int total = 0;
 
@@ -80,11 +82,11 @@ namespace InfiniteMeals
                     currentOrder.ordered_items.Add(new Dictionary<string, string>()
                     {
                         { "meal_id", meal.id },
-                        { "qty", meal.order_qty.ToString() }
+                        { "qty", meal.order_qty }
                     });
                 }
             }
-            currentOrder.totalAmount = total.ToString();
+            currentOrder.totalAmount = total;
 
         }
 

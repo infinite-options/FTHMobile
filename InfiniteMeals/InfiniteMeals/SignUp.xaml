@@ -27,6 +27,19 @@
                     <Entry x:Name="confirmPasswordEntry" Placeholder="confirm password" WidthRequest="150" />
                 </StackLayout>
 
+                <Picker x:Name="referralPicker" Grid.Column="1" Grid.Row="5" VerticalOptions="Center" Title="Referral">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Website</x:String>
+                            <x:String>Social Media</x:String>
+                            <x:String>Friend</x:String>
+                            <x:String>Event</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+
+
                 <Label Text="Would you like to add a permanent address for delivery?" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,50,0,0" />
 
                 <StackLayout Orientation="Vertical" HorizontalOptions="Center">
