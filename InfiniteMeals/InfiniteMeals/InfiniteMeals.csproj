@@ -30,9 +30,10 @@
     <Folder Include="Kitchens\Model\" />
     <Folder Include="Meals\" />
     <Folder Include="Kitchens\Controller\" />
-    <Folder Include="Checkout\" />
     <Folder Include="Converters\" />
     <Folder Include="Model\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Pages\Checkout\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
@@ -47,6 +48,9 @@
     <Compile Remove="Kitchens\Model\Order.cs" />
     <Compile Remove="Kitchens\Model\OrderModel.cs" />
     <Compile Remove="Meals\CheckOutPage.xaml.cs" />
+    <Compile Remove="Pages\Checkout\CheckOutPage.xaml.cs" />
+    <Compile Remove="Pages\SignUp.xaml.cs" />
+    <Compile Remove="Pages\SelectMealOptions.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="EmptyTextFile.txt" />

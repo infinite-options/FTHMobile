@@ -101,6 +101,7 @@ namespace InfiniteMeals
 
             parseFoods(foodbank.foodbank_id);
 
+            var bla = new SelectMealOptions("bla", "ble", "ble");
 
             await Navigation.PushAsync(new SelectMealOptions(foodbank.foodbank_id, foodbank.foodbank_name, foodbank.foodbank_zip));
         }
