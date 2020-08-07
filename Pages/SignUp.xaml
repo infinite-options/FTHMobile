@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="InfiniteMeals.SignUp">
+    <ContentPage.Content>
+        <ScrollView>
+             <StackLayout HorizontalOptions="Center" Margin="0, 50, 0, 0">
+
+                <Label Text="Join Today" HorizontalOptions="Center" />
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+                    <Entry x:Name="firstNameEntry" Placeholder="First Name" WidthRequest="150" />
+
+                    <Entry x:Name="lastNameEntry" Placeholder="Last Name" WidthRequest="150" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,5,0,0">
+                    <Entry x:Name="mmddyy" Placeholder="mm/dd/yy" WidthRequest="150" />
+                    <Entry x:Name="phoneNumberEntry" Placeholder="phone number" WidthRequest="150" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,5,0,0">
+                    <Entry x:Name="emailEntry" Placeholder="email address" WidthRequest="150" />
+                    <Entry x:Name="confirmEmailEntry" Placeholder="confirm email" WidthRequest="150" />
+                </StackLayout>
+
+                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,5,0,0">
+                    <Entry x:Name="passwordEntry" Placeholder="password" WidthRequest="150" />
+                    <Entry x:Name="confirmPasswordEntry" Placeholder="confirm password" WidthRequest="150" />
+                </StackLayout>
+
+
+                <Label Text="Would you like to add a permanent address for delivery?" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,50,0,0" />
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                    <Entry x:Name="Address1" Placeholder="Address line 1" />
+                    <Entry x:Name="Address2" Placeholder="Address line 2" />
+                    <Entry x:Name="City" Placeholder="City" />
+                    <Entry x:Name="State" Placeholder="State" />
+                    <Entry x:Name="Zipcode" Placeholder="Zipcode" />
+                    <Label Text="Or use my current location for pickup" Margin="0,0,0,0" />
+                    <Image Source="googlemaps.png" Margin="0,0,0,0" WidthRequest="40" HeightRequest="40" />
+                </StackLayout>
+
+                 <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                    <Label Text="Dietary Restrictions" Margin="0,30,0,0" HorizontalTextAlignment="Center" />
+                    <Label Text="Select all that apply" HorizontalTextAlignment="Center" TextColor="DarkGray" FontSize="15" />
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button Text="Vegan" Clicked="Button_Clicked" WidthRequest="150"/>
+                        <Button Text="Gluten Free" Clicked="Button_Clicked" WidthRequest="150" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" HeightRequest="30">
+                        <Button Text="Vegetarian" Clicked="Button_Clicked" WidthRequest="150"/>
+                        <Button Text="Halal" Clicked="Button_Clicked" WidthRequest="150" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" HeightRequest="30">
+                        <Button Text="Kosher" Clicked="Button_Clicked" WidthRequest="150"/>
+
+                        <StackLayout Orientation="Vertical" HeightRequest="30" HorizontalOptions="Center">
+                            <Label Text="Food Allergy" WidthRequest="150" FontSize="15"/>
+                            <Entry x:Name="allergy" Placeholder="Food names" FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                
+                </StackLayout>
+
+                <Button Text="Submit" Clicked="Signup_Clicked" Margin="0,50,0,0"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
+

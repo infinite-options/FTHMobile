@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
+    <PackageReference Include="XamarinFastEntry.Behaviors" Version="1.1.1" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.7.0.1080" />
+    <PackageReference Include="Microsoft.Net.Http.Headers" Version="2.2.8" />
+    <PackageReference Include="CData.UPS" Version="19.0.7354" />
+    <PackageReference Include="Json.Net" Version="1.0.23" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.7.0.1080" />
+    <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.3.101.118" />
+    <PackageReference Include="AWSSDK.Core" Version="3.3.107.32" />
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="MySqlConnector" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Meals\" />
+    <Folder Include="Checkout\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Model\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\9.4.1.0\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="CreditCardPage.xaml.cs" />
+    <Compile Remove="ViewModels\CreditCardPageViewModel.cs" />
+    <Compile Remove="Meals\Model\CreditCardPageViewModel.cs" />
+    <Compile Remove="Payment\EmptyClass.cs" />
+    <Compile Remove="Kitchens\Model\Order.cs" />
+    <Compile Remove="Kitchens\Model\OrderModel.cs" />
+    <Compile Remove="Meals\CheckOutPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="EmptyTextFile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="MyPage.xaml" />
+  </ItemGroup>
+</Project>

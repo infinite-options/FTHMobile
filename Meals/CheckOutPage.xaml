@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="InfiniteMeals.SelectMealOptions"
+    Title="{Binding kitchen_name}"
+    ios:Page.UseSafeArea="true">
+
+    <StackLayout Orientation="Vertical">
+        <Label XAlign="Center" Margin="5, 10, 5, 10" x:Name="NoMealsLabel" Text="No produce have been posted today for this Business."/>
+        <Label XAlign="Center" Margin="5, 10, 5, 10" x:Name="foodBankNameLabel"  Text="{Binding myProperty}" FontAttributes="Bold" FontSize="Medium" TextColor="Black"/>
+        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+        <ImageButton Source="veganTemp.png" WidthRequest="35" HeightRequest="35" Clicked="Vegan_Clicked" BackgroundColor="Transparent" CommandParameter="{Binding .}" />
+        <ImageButton Source="veganTemp.png" WidthRequest="35" HeightRequest="35" Clicked="Kosher_Clicked" BackgroundColor="Transparent" CommandParameter="{Binding .}" />
+        <ImageButton Source="veganTemp.png" WidthRequest="35" HeightRequest="35" Clicked="vegetarian_Clicked" BackgroundColor="Transparent" CommandParameter="{Binding .}" />
+        <ImageButton Source="veganTemp.png" WidthRequest="35" HeightRequest="35" Clicked="glutenfree_Clicked" BackgroundColor="Transparent" CommandParameter="{Binding .}" />
+            </StackLayout>
+        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+        <Image Source="NewTruck.png" WidthRequest="35" HeightRequest="35" BackgroundColor="Transparent"/>
+        <Image Source="Basket.png" WidthRequest="35" HeightRequest="35" BackgroundColor="Transparent"/>
+        <Label VerticalOptions="Center" Text="Delivery or Pickup" FontAttributes="Bold" FontSize="Medium" TextColor="Black"/>
+            </StackLayout>
+        <ListView x:Name="mealsListView" HasUnevenRows="True" IsPullToRefreshEnabled="true" SelectionMode="None" Footer="">              
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                        <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Vertical" HeightRequest="50" WidthRequest="50">
+                                 <Image Source="{Binding imageString}" HeightRequest="50" WidthRequest="50" Aspect="AspectFill"></Image>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Vertical" WidthRequest="200">
+                                <Label Text="{Binding title}" FontAttributes="Bold" FontSize="Default" TextColor="Black"></Label>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="$" FontSize="Small" Margin="0,0,0,0"></Label>
+                                    <Label Text="{Binding price}" FontSize="Small" Margin="0,0,0,0"></Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <ImageButton Source="minusButton.png" HeightRequest="25" Clicked="reduceOrders" WidthRequest="25" BackgroundColor="Transparent" CommandParameter="{Binding .}"/>
+                                <Label HorizontalTextAlignment="Center" Text="{Binding order_qty}" WidthRequest="30" VerticalTextAlignment="Center"/>
+                                <ImageButton Source="plusButton.png" HeightRequest="25" Clicked="addOrders" WidthRequest="25" BackgroundColor="Transparent" CommandParameter="{Binding .}"/>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                    </ViewCell>
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        
+        <Button Text="Proceed to Checkout" Margin="20, 10, 20, 10" HeightRequest="40" BorderColor="Gray" BorderWidth="0.5" x:Name="checkout" Clicked="Handle_Clicked"/>
+    </StackLayout>
+</ContentPage>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="InfiniteMeals.SelectMealOptions"
+    Title="{Binding kitchen_name}"
+    ios:Page.UseSafeArea="true">
+
+    <StackLayout Orientation="Vertical">
+        <Label XAlign="Center" Margin="5, 10, 5, 10" x:Name="NoMealsLabel" Text="No produce have been posted today for this Business."/>
+        <ListView x:Name="mealsListView" HasUnevenRows="True" IsPullToRefreshEnabled="true" SelectionMode="None" Footer="">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                        <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Vertical" HeightRequest="50" WidthRequest="50">
+                                 <Image Source="{Binding imageString}" HeightRequest="50" WidthRequest="50" Aspect="AspectFill"></Image>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Vertical" WidthRequest="200">
+                                <Label Text="{Binding title}" FontAttributes="Bold" FontSize="Default" TextColor="Black"></Label>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="$" FontSize="Small" Margin="0,0,0,0"></Label>
+                                    <Label Text="{Binding price}" FontSize="Small" Margin="0,0,0,0"></Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <ImageButton Source="minusButton.png" HeightRequest="25" Clicked="reduceOrders" WidthRequest="25" BackgroundColor="Transparent" CommandParameter="{Binding .}"/>
+                                <Label HorizontalTextAlignment="Center" Text="{Binding order_qty}" WidthRequest="30" VerticalTextAlignment="Center"/>
+                                <ImageButton Source="plusButton.png" HeightRequest="25" Clicked="addOrders" WidthRequest="25" BackgroundColor="Transparent" CommandParameter="{Binding .}"/>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                    </ViewCell>
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        
+        <Button Text="Proceed to Checkout" Margin="20, 10, 20, 10" HeightRequest="40" BorderColor="Gray" BorderWidth="0.5" x:Name="checkout" Clicked="Handle_Clicked"/>
+    </StackLayout>
+</ContentPage>-->

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="InfiniteMeals.Login">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="searchIcon.png" Order="Primary" Priority="0"></ToolbarItem>
+        <ToolbarItem IconImageSource="optionsIcon.png" Order="Primary" Priority="0"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal"  BackgroundColor="#f0f0f0" Padding="20,15,0,15">
+            <Image Source="iconImage.png" HeightRequest="60" WidthRequest="60" Margin="0,0,0,0"></Image>
+
+            <StackLayout VerticalOptions="Center">
+                <Label HorizontalOptions="Center" FontSize="22">
+                    SERVING NOW
+                </Label>
+
+                <Label HorizontalOptions="Center" FontSize="15">
+                    Fast, Fresh, And Free
+                </Label>
+
+            </StackLayout>
+        </StackLayout>
+
+
+        <Label HorizontalOptions="Center" TextColor="White" FontSize="50" Margin="0,300,0,0" Padding="50,50,0,250" BackgroundColor="#009E00">
+            GET FREE GROCERIES
+        </Label>
+        <Label HorizontalOptions="Center" TextColor="White" FontSize="20" Margin="30,-250,0,0">
+            Order now for pick up or free delivery!
+        </Label>
+
+        <Entry x:Name="loginEmail" Placeholder="Email" FontSize="15" Margin="50, 10, 0, 0" HorizontalOptions="Start" WidthRequest="300" TextColor="DarkGray"/>
+
+        <Entry x:Name="loginPassword" Placeholder="Password" FontSize="15" Margin="50, 0, 0, 0" HorizontalOptions="Start" WidthRequest="300" TextColor="DarkGray"/>
+
+        <Button Clicked="ClickedLogin" Text="log in" Margin="60, 0, 0, 0" HorizontalOptions="Start" TextColor="White"></Button>
+
+        <Button Clicked="SignUpClicked" Text="sign up" Margin="60, -20, 0, 0" HorizontalOptions="Start" TextColor="White"></Button>
+    </StackLayout>
+</ContentPage>

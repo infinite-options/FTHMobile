@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:InfiniteMeals" x:Class="InfiniteMeals.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="optionsIcon.png" Order="Primary" Priority="0" ></ToolbarItem>
+        <ToolbarItem IconImageSource="searchIcon.png" Order="Primary" Priority="1"></ToolbarItem>
+        <ToolbarItem IconImageSource="googlemaps.png" Order="Primary" Priority="2"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ListView x:Name="kitchensListView" VerticalOptions="StartAndExpand" Footer="" HasUnevenRows="true" IsPullToRefreshEnabled="true">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Margin="15, 15, 15, 15" Orientation="Vertical">
+                        <Label Text="{Binding foodbank_name}" HorizontalOptions="StartAndExpand" FontSize="Large" FontAttributes="Bold" Opacity="{Binding opacity}" TextColor="Black"/>
+                        <Label Text="{Binding foodbank_address}" HorizontalOptions="Start" FontSize="Small" FontAttributes="Italic" Opacity="{Binding opacity}"/>
+                        <Label Text="{Binding tag_line}" HorizontalOptions="StartAndExpand" FontSize="Medium" FontAttributes="Italic" Opacity="{Binding opacity}"/>
+                        
+                        <StackLayout Orientation="Horizontal">
+                            <Image x:Name="deliveryOptionIcon" Opacity="{Binding delivery}" Source="truck.png" WidthRequest="20" HeightRequest="20"/>
+                            <Image x:Name="pickupOptionIcon" Opacity="{Binding pickup}" Source="walking.png" WidthRequest="20" HeightRequest="20"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Delivery Hours: " FontAttributes="Bold" FontSize="Micro" Opacity="{Binding opacity}"/>
+                            <Label Text="{Binding delivery_hours}" FontSize="Micro" Opacity="{Binding opacity}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Pickup Hours: " FontAttributes="Bold" FontSize="Micro" Opacity="{Binding opacity}"/>
+                            <Label Text="{Binding pickup_hours}" FontSize="Micro" Opacity="{Binding opacity}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
